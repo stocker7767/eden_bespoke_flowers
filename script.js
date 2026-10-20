@@ -1,0 +1,8 @@
+const menu=document.querySelector('.menu'),links=document.querySelector('.links');if(menu){menu.onclick=()=>{let open=links.classList.toggle('open');menu.setAttribute('aria-expanded',open);menu.textContent=open?'✕':'☰'};}document.querySelectorAll('.links a').forEach(a=>a.addEventListener('click',()=>{links.classList.remove('open');if(menu){menu.textContent='☰';menu.setAttribute('aria-expanded','false')}}));document.querySelectorAll('[data-year]').forEach(e=>e.textContent=new Date().getFullYear());if('IntersectionObserver'in window){const ob=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');ob.unobserve(e.target)}}),{threshold:.06});document.querySelectorAll('.reveal').forEach(e=>ob.observe(e))}else document.querySelectorAll('.reveal').forEach(e=>e.classList.add('show'));const form=document.getElementById('enquiry');if(form){form.addEventListener('submit',e=>{e.preventDefault();if(!form.reportValidity())return;const d=new FormData(form);const subject=encodeURIComponent('Eden website enquiry: '+d.get('type'));const body=encodeURIComponent('Name: '+d.get('name')+'
+Email: '+d.get('email')+'
+Phone: '+d.get('phone')+'
+Occasion: '+d.get('type')+'
+Preferred date: '+d.get('date')+'
+Budget: '+d.get('budget')+'
+Message:
+'+d.get('message'));const message=decodeURIComponent(subject)+'\n\n'+decodeURIComponent(body);if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(message).then(()=>document.getElementById('formstatus').textContent='Enquiry copied. Call Eden on 0113 258 7007 to discuss it.').catch(()=>{document.getElementById('formstatus').textContent=message})}else{document.getElementById('formstatus').textContent=message}})}
