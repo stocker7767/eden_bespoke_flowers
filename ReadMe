@@ -1,8 +1,11 @@
-EDEN BESPOKE FLOWERS — UNOFFICIAL COMPLETE FRONT-END REDESIGN
+# Eden Bespoke Flowers
 
+[Open the portfolio demo](https://montychaudhary.com/?monty_demo=eden-bespoke-flowers)
 
-Pages: Home, Flowers & Gifts, Weddings, Funerals, Events, About, Contact, FAQs.
+Weddings, funerals and events each have a page so visitors can go straight to the kind of flowers they need. The contact form turns the details a visitor enters into an enquiry they can copy.
 
-All photographs are externally hosted illustrative Unsplash imagery. Replace with licensed client photography.
-This site is NOT Eden’s official site and cannot take payments or place orders. The contact form prepares a copyable enquiry and does not transmit data. The phone number and location come from public listings. Verify prices, hours and details before commercial launch.
+## Try it
 
+Open **Weddings** or **Funerals** from the home page. Then open **Contact**, enter sample details and see the enquiry the form prepares.
+
+This is an independent portfolio concept with illustrative photography. To preview the source locally, download the repo and open `index.html` in a browser.
